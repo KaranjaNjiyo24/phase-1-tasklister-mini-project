@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector('form').addEventListener(
     'submit', (e) => {
       // console.log(e)
-      e.preventDefault()
+      e.preventDefault() //prevent form from submitting and refreshing
       buildToDo(e.target["new-task-description"].value)
     }
   )
 
   function buildToDo(taskDescription) {
-    let p = document.createElement('p')
-    let btn = document.createElement('button')
-    btn.addEventListener('click', handleDelete)
+    let p = document.createElement('p') //paragrah for each string
+    let btn = document.createElement('button') //delete button
+    btn.addEventListener('click', handleDelete) //listens for the click to our button
     btn.textContent = 'Delete'
     p.textContent = `${taskDescription} `
     p.appendChild(btn)
